@@ -1,0 +1,49 @@
+type LogoProps = {
+  className?: string;
+  size?: number;
+};
+
+/**
+ * KB Constructions logo mark — a custom SVG combining a building/roofline
+ * architectural element with KB monogram letterforms. Transparent background,
+ * scales crisply at any size.
+ */
+export default function Logo({ className = '', size = 44 }: LogoProps) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 48 48"
+      fill="none"
+      width={size}
+      height={size}
+      className={className}
+      role="img"
+      aria-label="KB Constructions logo"
+    >
+      {/* Amber building/roofline — architectural element */}
+      <path d="M6 15 L24 5 L42 15 L42 17 L6 17 Z" fill="#f59e0b" />
+      {/* Dark building body */}
+      <rect x="8" y="17" width="32" height="27" rx="1" fill="#111416" />
+      {/* Architectural floor lines */}
+      <line x1="8" y1="26" x2="40" y2="26" stroke="#252b2f" stroke-width="1" />
+      <line x1="8" y1="34" x2="40" y2="34" stroke="#252b2f" stroke-width="1" />
+      {/* K letterform */}
+      <path
+        d="M14 20 L14 41 M14 30.5 L21 20 M14 30.5 L21 41"
+        stroke="#f59e0b"
+        strokeWidth="3"
+        strokeLinecap="square"
+        strokeLinejoin="miter"
+      />
+      {/* B letterform */}
+      <path
+        d="M26 20 L26 41 M26 20 L33.5 20 Q37 20 37 23.5 Q37 27 33.5 27 L26 27 M26 27 L33.5 27 Q37 27 37 30.5 Q37 34 33.5 34 L26 34 M26 34 L26 41 L33.5 41 Q37 41 37 37.5 Q37 34 33.5 34"
+        stroke="#f59e0b"
+        strokeWidth="2.8"
+        strokeLinecap="square"
+        strokeLinejoin="miter"
+        fill="none"
+      />
+    </svg>
+  );
+}
